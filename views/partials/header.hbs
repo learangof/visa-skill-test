@@ -1,0 +1,24 @@
+<nav class="bg-primary text-gray-900 text-xl font-bold">
+    <div class="mx-auto max-w-7xl">
+        <div class="relative flex py-2 items-center justify-between">
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                <a class="flex flex-shrink-0 items-center" href="/">
+                    <img src="/img/logo.png" alt="emoji store" width="80">
+                    <span class="ms-3 text-2xl">Emoji Store</span>
+                </a>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <div class="relative ml-3">
+                    <div>
+                        <a class="flex gap-2 justify-center items-center w-32 hover:text-primary hover:bg-gray-50 bg-white px-2 py-3 rounded-md"
+                            aria-current="page" href="/shopping-cart/">
+                            🛒 Cart
+                            <span
+                                class="inline-flex items-center rounded-lg bg-green-200 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20 {{#unless session.cart.totalQty}} hidden {{/unless}}">{{session.cart.totalQty}}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

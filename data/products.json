@@ -1,0 +1,37 @@
+{
+    "A": {
+        "_id": "A",
+        "emoji": "😊",
+        "title": "Happy",
+        "description": "Happy Emoji!",
+        "price": 50
+    },
+    "B": {
+        "_id": "B",
+        "emoji": "😡",
+        "title": "Angry",
+        "description": "Angry Emoji!",
+        "price": 30
+    },
+    "C": {
+        "_id": "C",
+        "emoji": "😭",
+        "title": "Sad",
+        "description": "Sad Emoji!",
+        "price": 20
+    },
+    "D": {
+        "_id": "D",
+        "emoji": "🤯",
+        "title": "Surprised",
+        "description": "Surprised Emoji!",
+        "price": 15
+    },
+    "E": {
+        "_id": "E",
+        "emoji": "🤢",
+        "title": "Sick",
+        "description": "Sick Emoji!",
+        "price": 25
+    }
+}

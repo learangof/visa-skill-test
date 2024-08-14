@@ -1,0 +1,52 @@
+{{# if products }}
+<dialog {{#if successMsg}}open{{/if}}
+    class="border-2 bg-green-100 border-green-500 px-4 py-2 rounded-lg absolute top-4">
+    <strong>Yay!</strong> {{ successMsg }}
+    <form method="dialog" class="inline">
+        <button class="px-2 rounded-lg bg-white border-[1px] border-gray-300  hover:bg-gray-200">X</button>
+    </form>
+</dialog>
+<dialog {{#if errorMsg}}open{{/if}}
+    class="border-2 bg-yellow-100 border-yellow-500 px-4 py-2 rounded-lg absolute top-4">
+    <strong>Holy guacamole!</strong> {{ errorMsg }}
+    <form method="dialog" class="inline">
+        <button class="px-2 rounded-lg bg-white border-[1px] border-gray-300 hover:bg-gray-400">X</button>
+    </form>
+</dialog>
+<div class="flex flex-col w-10/12 bg-white m-4 p-4 gap-2 border-[1px] border-gray-300 rounded-lg">
+
+    {{# each products }}
+    <div class="flex items-center gap-2 w-2/4 justify-between" id="products">
+        <div class="flex w-5/12 justify-start text-left gap-2">
+            <span
+                class="w-7 items-center text-center rounded-full bg-gray-200 px-2 py-1 text-xs font-medium text-gray-700 ring-1 ring-inset ring-gray-600/20">{{
+                this.qty }}</span>
+            <strong class="w-3/4">{{ this.item.title }} Emoji =
+                <span
+                    class="inline-flex items-center rounded-lg bg-green-200 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">${{
+                    this.price }}</span>
+            </strong>
+        </div>
+        <div>
+            <a href="/reduce/{{this.item._id}}"
+                class="bg-slate-400 hover:bg-slate-700 text-white py-1 px-4 rounded-lg">-1</a>
+            <a href="/add/{{this.item._id}}"
+                class="bg-slate-400 hover:bg-slate-700 text-white py-1 px-4 rounded-lg">+1</a>
+        </div>
+        <a href="/remove/{{this.item._id}}" class="bg-red-500 hover:bg-red-700 text-white py-1 px-4 rounded-lg">Remove
+            all</a>
+    </div>
+    {{/each}}
+</div>
+<div class="bg-gray-800 text-white px-6 py-4 rounded-md">
+    <strong>Total: {{ totalPrice }}</strong>
+</div>
+{{ else }}
+<div
+    class="flex flex-col w-10/12 bg-white m-4 p-4 gap-2 border-[1px] border-gray-300 rounded-lg text-center justify-center items-center">
+
+    <h2 class="text-2xl">Add items to the cart</h2>
+    <a href="/" class="bg-green-500 hover:bg-green-700 w-1/6 text-white py-1 px-4 rounded-lg">Back</a>
+
+</div>
+{{/if}}

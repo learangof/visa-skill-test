@@ -1,0 +1,26 @@
+{
+  "name": "visa-skill-test",
+  "version": "1.0.0",
+  "description": "### Kata 09: Back to the Checkout http://codekata.com/kata/kata09-back-to-the-checkout/",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "unit-test": "mocha --recursive test/unit/cart.spec.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "edit-json-file": "^1.8.0",
+    "express": "^4.19.2",
+    "express-handlebars": "^8.0.1",
+    "express-session": "^1.18.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "mocha": "^10.7.3",
+    "nodemon": "^3.1.4",
+    "tailwindcss": "^3.4.10"
+  }
+}

@@ -1,0 +1,46 @@
+<dialog {{#if successMsg}}open{{/if}}
+    class="border-2 bg-green-100 border-green-500 px-4 py-2 rounded-lg absolute top-4">
+    <strong>Yay!</strong> {{ successMsg }}
+    <form method="dialog" class="inline">
+        <button class="px-2 rounded-lg bg-white border-[1px] border-gray-300  hover:bg-gray-200">X</button>
+    </form>
+</dialog>
+<dialog {{#if errorMsg}}open{{/if}}
+    class="border-2 bg-yellow-100 border-yellow-500 px-4 py-2 rounded-lg absolute top-4">
+    <strong>Holy guacamole!</strong> {{ errorMsg }}
+    <form method="dialog" class="inline">
+        <button class="px-2 rounded-lg bg-white border-[1px] border-gray-300 hover:bg-gray-400">X</button>
+    </form>
+</dialog>
+
+<div class="flex text-center m-4 gap-4 flex-wrap w-11/12 justify-between p-4">
+
+    {{# each products }}
+
+    <div class="flex flex-col bg-white border-[1px] border-gray-400  rounded-lg" style="width: 18rem;">
+        <div class="bg-gray-200 pt-4 pb-3 px-4 rounded-t-lg border-b-[1px] border-gray-300">
+            <div class="text-5xl">{{ this.emoji }}</div>
+        </div>
+        <div class="px-4 py-2">
+            <h5 class="font-bold ">{{ this.title }}</h5>
+            <h6 class="card-subtitle mb-3 text-body-secondary text-sm pb-2 border-b-[1px] border-gray-500">
+                ${{this.price}}
+            </h6>
+            <p class="card-text text-start">{{this.description}}</p>
+        </div>
+        <div class="bg-gray-100 p-4 rounded-b-lg border-t-[1px] border-gray-200 text-right">
+            <a href="/add-to-cart/{{this._id}}" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">Add
+                to cart</a>
+        </div>
+    </div>
+
+    {{/each}}
+
+</div>
+
+<div class="mt-4">
+    <div class="text-center">
+        <a href="/shopping-cart/" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded font-bold"
+            id="cart" role="button">Go to cart</a>
+    </div>
+</div>
